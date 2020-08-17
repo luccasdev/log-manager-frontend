@@ -29,6 +29,15 @@ export class AccessLogDto {
   userAgent: string;
 }
 
+export class AccessLogListDto {
+  id: number;
+  createdAt: string;
+  ipAddress: string;
+  requestLine: string;
+  responseStatus: number;
+  userAgent: string;
+}
+
 export class AccessLogFilterDto {
   createDateRange: RangeDate = new RangeDate();
   ipAddress: string;
