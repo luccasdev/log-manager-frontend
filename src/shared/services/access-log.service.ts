@@ -32,7 +32,7 @@ export class AccessLogService {
     const data: FormData = new FormData();
     data.append('file_upload', file, file.name);
     const params = new HttpParams()
-      .set('file-name', file.name)
+      .set('file-name', file.name);
 
     return this.http.post<void>(this.backEndUrl + '/upload', data, { params });
   }
