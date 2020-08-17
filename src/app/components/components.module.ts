@@ -5,6 +5,7 @@ import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { UploadComponent } from './upload/upload.component';
 import {RouterModule} from '@angular/router';
+import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 
 
 
@@ -20,7 +21,8 @@ import {RouterModule} from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    NgxDatatableModule
   ]
 })
 export class ComponentsModule { }

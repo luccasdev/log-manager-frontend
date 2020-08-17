@@ -1,1 +1,17 @@
-<p>list works!</p>
+<ngx-datatable
+  class="material"
+  [rows]="data"
+  [columns]="columns"
+  [columnMode]="ColumnMode.force"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  rowHeight="auto"
+  [externalPaging]="true"
+  [count]="page.totalElements"
+  [offset]="page.number"
+  [limit]="page.size"
+  (page)="loadData($event)"
+  (sort)="onSort($event)"
+  [externalSorting]="true"
+>
+</ngx-datatable>
