@@ -9,7 +9,7 @@ export class Page<D> {
 
 export class PageRequest {
   page = 0;
-  size = 10;;
+  size = 10;
 }
 
 export class PageRequestFilter<F> {
