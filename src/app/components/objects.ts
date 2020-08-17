@@ -39,3 +39,14 @@ export class RangeDate {
   startDate: Date;
   endDate: Date;
 }
+
+export class AccessLogUploadResultDto {
+  message: string;
+  hasError: boolean;
+}
+
+export class UploadHistoryDto {
+  fileName: string;
+  uploadAt: Date;
+  uploadStatusMessage: string;
+}
