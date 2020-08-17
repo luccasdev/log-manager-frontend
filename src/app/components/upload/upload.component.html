@@ -1,1 +1,9 @@
-<p>upload works!</p>
+<div class="form-group">
+  <label for="file">Choose File</label>
+  <input type="file"
+         id="file"
+         (change)="handleFileInput($event)">
+</div>
+<div class="row col-12">
+  <button class="btn btn-primary" (click)="uploadFile()">Upload</button>
+</div>

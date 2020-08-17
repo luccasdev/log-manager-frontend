@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AccessLogDto, AccessLogFilterDto, Page, PageRequest, PageRequestFilter} from '../objects';
-import {ListService} from '../../../shared/services/list.service';
+import {AccessLogService} from '../../../shared/services/access-log.service';
 import {ColumnMode, TableColumn} from '@swimlane/ngx-datatable';
 
 @Component({
@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   data: AccessLogDto[];
   filter: AccessLogFilterDto = new AccessLogFilterDto();
   columns: TableColumn[];
-  constructor(public listService: ListService) {
+  constructor(public accessLogService: AccessLogService) {
     this.columns = [
       { name: 'Date and Time', prop: 'createdAt' },
       { name: 'IP Address', prop: 'ipAddress' },
@@ -37,7 +37,7 @@ export class ListComponent implements OnInit {
       pageRequest.page = $event.offset;
     }
 
-    this.listService.findAll(pageRequest).subscribe(data => {
+    this.accessLogService.findAll(pageRequest).subscribe(data => {
       this.data = data.content;
       this.page = data;
     });
@@ -53,7 +53,7 @@ export class ListComponent implements OnInit {
     }
     pageRequestFilter.pageNumber = this.page.number;
     pageRequestFilter.pageSize = this.page.size;
-    this.listService.findAllWithFilter(pageRequestFilter).subscribe(data => {
+    this.accessLogService.findAllWithFilter(pageRequestFilter).subscribe(data => {
       this.data = data.content;
       this.page = data;
     });
@@ -62,7 +62,7 @@ export class ListComponent implements OnInit {
   onClickFilter() {
     const pageRequestFilter = new PageRequestFilter<AccessLogFilterDto>();
     pageRequestFilter.filter = this.filter;
-    this.listService.findAllWithFilter(pageRequestFilter).subscribe(data => {
+    this.accessLogService.findAllWithFilter(pageRequestFilter).subscribe(data => {
       this.data = data.content;
       this.page = data;
     });

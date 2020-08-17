@@ -5,9 +5,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" routerLink="list">List <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" routerLink="create">Create</a>
-      <a class="nav-item nav-link" routerLink="upload">Upload</a>
+      <a [routerLinkActive]="'active'" class="nav-item nav-link " routerLink="list">List</a>
+      <a [routerLinkActive]="'active'" class="nav-item nav-link" routerLink="create">Create</a>
+      <a [routerLinkActive]="'active'" class="nav-item nav-link" routerLink="upload">Upload</a>
     </div>
   </div>
 </nav>

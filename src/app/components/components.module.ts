@@ -6,7 +6,7 @@ import { CreateComponent } from './create/create.component';
 import { UploadComponent } from './upload/upload.component';
 import {RouterModule} from '@angular/router';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import {FormsModule} from '@angular/forms';
     RouterModule,
     NgxDatatableModule,
     FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class ComponentsModule { }
