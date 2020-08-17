@@ -28,3 +28,14 @@ export class AccessLogDto {
   responseStatus: number;
   userAgent: string;
 }
+
+export class AccessLogFilterDto {
+  createDateRange: RangeDate = new RangeDate();
+  ipAddress: string;
+  userAgent: string;
+}
+
+export class RangeDate {
+  startDate: Date;
+  endDate: Date;
+}
