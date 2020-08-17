@@ -6,8 +6,7 @@ import { CreateComponent } from './create/create.component';
 import { UploadComponent } from './upload/upload.component';
 import {RouterModule} from '@angular/router';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
-
-
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,8 @@ import {NgxDatatableModule} from '@swimlane/ngx-datatable';
   imports: [
     CommonModule,
     RouterModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    FormsModule,
   ]
 })
 export class ComponentsModule { }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {AccessLogDto, Page, PageRequest, PageRequestFilter} from '../app/components/objects';
+import {AccessLogDto, Page, PageRequest, PageRequestFilter} from '../../app/components/objects';
 import {Observable} from 'rxjs';
 
 @Injectable({
