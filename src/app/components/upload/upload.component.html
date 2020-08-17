@@ -31,5 +31,8 @@
     <td>{{history.uploadAt}}</td>
     <td>{{history.uploadStatusMessage}}</td>
   </tr>
+  <tr *ngIf="uploadHistoryDto.length === 0">
+    <th scope="row">You have not uploaded any</th>
+  </tr>
   </tbody>
 </table>
