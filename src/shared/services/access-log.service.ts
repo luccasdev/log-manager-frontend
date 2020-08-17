@@ -30,10 +30,8 @@ export class AccessLogService {
 
   public uploadFile(file: any): Observable<void> {
     const data: FormData = new FormData();
-    data.append('file_upload', file, file.name);
-    const params = new HttpParams()
-      .set('file-name', file.name);
+    data.append('file', file, file.name);
 
-    return this.http.post<void>(this.backEndUrl + '/upload', data, { params });
+    return this.http.post<void>(this.backEndUrl + '/upload', data);
   }
 }
