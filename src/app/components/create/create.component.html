@@ -1,4 +1,17 @@
+<h2 class="mb-5">Create</h2>
 <form [formGroup]="accessLogFormGroup" (ngSubmit)="save()">
+<div class="row">
+  <div class="form-group col-md-6">
+    <label for="userAgent">User Agent</label>
+    <textarea formControlName="userAgent" class="form-control" id="userAgent" required placeholder="User Agent"></textarea>
+    <small  *ngIf="submitted && accessLogFormGroup.get('userAgent').hasError('required')" class="text-danger form-text">Required field</small>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="requestLine">Request Line</label>
+    <textarea formControlName="requestLine" type="text" class="form-control" required id="requestLine" placeholder="Request Line"></textarea>
+    <small  *ngIf="submitted && accessLogFormGroup.get('requestLine').hasError('required')" class="text-danger form-text">Required field</small>
+  </div>
+</div>
 <div class="row">
   <div class="form-group col-md-4">
     <label for="ipAddress">IP Address</label>
@@ -7,7 +20,8 @@
   </div>
   <div class="form-group col-md-4">
     <label for="occurrenceDate">Occurrence date</label>
-    <input formControlName="createdAt" type="datetime-local" required class="form-control" id="occurrenceDate" placeholder="Occurrence date"/>
+    <input formControlName="createdAt" required selectMode="single" [owlDateTime]="createRange" [owlDateTimeTrigger]="createRange" class="form-control" id="occurrenceDate" placeholder="Occurrence date"/>
+    <owl-date-time #createRange></owl-date-time>
     <small  *ngIf="submitted && accessLogFormGroup.get('createdAt').hasError('required')" class="text-danger form-text">Required field</small>
   </div>
   <div class="form-group col-md-4">
@@ -16,20 +30,8 @@
     <small  *ngIf="submitted && accessLogFormGroup.get('responseStatus').hasError('required')" class="text-danger form-text">Required field</small>
   </div>
 </div>
-<div class="row">
-  <div class="form-group col-md-6">
-    <label for="requestLine">Request Line</label>
-    <input formControlName="requestLine" type="text" class="form-control" required id="requestLine" placeholder="Request Line">
-    <small  *ngIf="submitted && accessLogFormGroup.get('requestLine').hasError('required')" class="text-danger form-text">Required field</small>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="userAgent">User Agent</label>
-    <input formControlName="userAgent" class="form-control" id="userAgent" required placeholder="User Agent">
-    <small  *ngIf="submitted && accessLogFormGroup.get('userAgent').hasError('required')" class="text-danger form-text">Required field</small>
-  </div>
-</div>
 <div class="float-right">
-  <button class="btn btn-primary" type="submit">Save</button>
+  <button class="btn btn-green" type="submit">Save</button>
 </div>
 </form>
 <div class="row col-12">
