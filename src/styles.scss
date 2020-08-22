@@ -1,13 +1,83 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~@swimlane/ngx-datatable/index.css';
-@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/themes/dark.scss';
 @import '~@swimlane/ngx-datatable/assets/icons.css';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 
 p {
   margin: 0;
 }
 
-.active {
-  font-weight: 700;
-  text-decoration: underline !important;
+h2 {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 500;
+  color: #E2E2E2;
+  font-size: 2.1em;
+}
+
+body {
+  background-color: #1B1E27;
+}
+
+.content {
+  margin-left: 210px;
+  padding: 3%;
+}
+
+.empty-row {
+  margin: 1em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.datatable-header-cell-label {
+  font-size: 1.2em;
+}
+
+.page-count {
+  font-size: 1.2em;
+  text-transform: capitalize;
+}
+
+.form-control:focus {
+  color: #FFFFFF;
+  background-color: #06080f;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  font-style: italic;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #FFFFFF;
+  font-style: italic;
+  background-color: #101218;
+  background-clip: padding-box;
+  border: 1px solid #213364;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+label {
+  display: inline-block;
+  font-family: "Source Code Pro", monospace;
+  margin-bottom: .5rem;
+  color: #FFFF;
+  font-weight: bold;
+}
+
+
+.button-form {
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  margin-top: 1.85em;
+  display: flex;
 }

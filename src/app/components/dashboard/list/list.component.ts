@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AccessLogFilterDto, AccessLogListDto, Page, PageRequest, PageRequestFilter} from '../objects';
-import {AccessLogService} from '../../../shared/services/access-log.service';
+import { AccessLogFilterDto, AccessLogListDto, Page, PageRequest, PageRequestFilter} from '../../objects';
+import {AccessLogService} from '../../../../shared/services/access-log.service';
 import {ColumnMode, TableColumn} from '@swimlane/ngx-datatable';
 
 @Component({

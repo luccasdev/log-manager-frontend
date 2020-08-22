@@ -39,14 +39,9 @@ export class AccessLogListDto {
 }
 
 export class AccessLogFilterDto {
-  createDateRange: RangeDate = new RangeDate();
+  createDateRange = [];
   ipAddress: string;
   userAgent: string;
-}
-
-export class RangeDate {
-  startDate: Date;
-  endDate: Date;
 }
 
 export class AccessLogUploadResultDto {

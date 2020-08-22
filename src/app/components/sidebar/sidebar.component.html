@@ -1,0 +1,9 @@
+<div class="sidebar">
+  <div class="sidebar-logo">
+    <img src="assets/svg/logmanager-logo.svg"/>
+  </div>
+  <div [routerLinkActive]="'active'" [routerLink]="menuItem.router" *ngFor="let menuItem of menuItems" class="sidebar-item">
+    <img [src]="menuItem.iconPath" class="sidebar-item-icon" alt="sidebar-item-icon"/>
+    <label>{{menuItem.label}}</label>
+  </div>
+</div>
