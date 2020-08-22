@@ -7,16 +7,17 @@
 p {
   margin: 0;
 }
-
-h2 {
+h1, h2, h3, h4, h5 {
   font-family: 'Source Code Pro', monospace;
   font-weight: 500;
-  color: #E2E2E2;
+}
+h2 {
   font-size: 2.1em;
 }
 
 body {
   background-color: #1B1E27;
+  color: #E2E2E2;
 }
 
 .content {
@@ -88,6 +89,9 @@ label {
   font-weight: 700;
   padding-right: 1em;
   padding-left: 1em;
+  &.btn:disabled {
+    background-color: gray;
+  }
 }
 
 .alert-success {

@@ -1,11 +1,18 @@
-<div class="form-group">
-  <label for="file">Choose File</label>
-  <input type="file"
-         id="file"
-         (change)="handleFileInput($event)">
+<h2 class="mb-5">Upload Log File</h2>
+<div class="upload-file-container" (click)="fileInput.click()" appDragDrop (onFileDropped)="handleFileInput($event)">
+  <input hidden type="file" #fileInput (change)="handleFileInput($event)">
+  <div *ngIf="fileInput.files.length === 0" class="upload-file-drop-here">
+    <svg width="35" height="45" viewBox="0 0 17 21" fill="#00FF85" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.91667 5.57812V0H1.0625C0.473698 0 0 0.438867 0 0.984375V20.0156C0 20.5611 0.473698 21 1.0625 21H15.9375C16.5263 21 17 20.5611 17 20.0156V6.5625H10.9792C10.3948 6.5625 9.91667 6.11953 9.91667 5.57812ZM12.8022 14.4379H9.91667V17.7192C9.91667 18.0817 9.59969 18.3754 9.20833 18.3754H7.79167C7.40031 18.3754 7.08333 18.0817 7.08333 17.7192V14.4379H4.19776C3.56557 14.4379 3.24992 13.7287 3.69883 13.3157L7.96742 9.39053C8.26182 9.11941 8.73729 9.11941 9.03169 9.39053L13.3003 13.3157C13.7496 13.7287 13.4344 14.4379 12.8022 14.4379ZM16.6901 4.30664L12.356 0.287109C12.1568 0.102539 11.8867 0 11.6034 0H11.3333V5.25H17V4.9998C17 4.74141 16.8893 4.49121 16.6901 4.30664Z"/>
+    </svg>
+    <p>Drop file here or click here</p>
+  </div>
+  <div class="text-center align-self-center" *ngIf="fileInput.files.length > 0">
+    <p>File to upload: {{fileInput.files[0].name}}</p>
+  </div>
 </div>
-<div class="row col-12">
-  <button class="btn btn-primary" (click)="uploadFile()">Upload</button>
+<div class="row col-12 justify-content-center">
+  <button [disabled]="fileInput.files.length === 0" class="btn btn-green" (click)="uploadFile()">Upload</button>
 </div>
 
 <div class="row col-12">
@@ -17,19 +24,21 @@
   </div>
 </div>
 <h4 class="mt-5">Upload History</h4>
-<table class="table table-sm mt-3">
+<table class="table table-responsive-lg mt-3">
   <thead>
   <tr>
-    <th scope="col">File Name</th>
     <th scope="col">Uploaded At</th>
+    <th scope="col">File Name</th>
     <th scope="col">Upload Status</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let history of uploadHistoryDto">
-    <th scope="row">{{history.fileName}}</th>
-    <td>{{history.uploadAt}}</td>
-    <td>{{history.uploadStatusMessage}}</td>
+    <td style="width: 20%">{{history.uploadAt}}</td>
+    <th style="width: 60%">{{history.fileName}}</th>
+    <td class="font-weight-bold" *ngIf="history.uploadStatusMessage === UploadProcessEnum.SUCCESSFULY_PROCESSED" style="width: 20%; color: #00FF85">{{history.uploadStatusMessage}}</td>
+    <td class="font-weight-bold" *ngIf="history.uploadStatusMessage === UploadProcessEnum.ERROR_ON_PROCESS" style="width: 20%; color: #FF3232">{{history.uploadStatusMessage}}</td>
+    <td class="font-weight-bold" *ngIf="history.uploadStatusMessage === UploadProcessEnum.PROCESSING" style="width: 20%;  color: #00C2FF">{{history.uploadStatusMessage}}</td>
   </tr>
   <tr *ngIf="uploadHistoryDto.length === 0">
     <th scope="row">You have not uploaded any</th>

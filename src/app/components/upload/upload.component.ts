@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AccessLogService} from '../../../shared/services/access-log.service';
-import {AccessLogUploadResultDto, UploadHistoryDto} from '../objects';
+import {AccessLogUploadResultDto, UploadHistoryDto, UploadProcessEnum} from '../objects';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -15,6 +15,7 @@ export class UploadComponent implements OnInit {
   uploadHistoryDto: UploadHistoryDto[] = new Array<UploadHistoryDto>();
   fileEvent: any;
   fileUploaded: boolean;
+  UploadProcessEnum = UploadProcessEnum;
 
   constructor(public accessLogService: AccessLogService, private router: Router) {
     accessLogService.findUploadHistory().subscribe(result => {

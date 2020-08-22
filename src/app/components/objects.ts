@@ -54,3 +54,9 @@ export class UploadHistoryDto {
   uploadAt: Date;
   uploadStatusMessage: string;
 }
+
+export enum UploadProcessEnum {
+  PROCESSING = 'In batch process',
+  SUCCESSFULY_PROCESSED = 'File upload with success',
+  ERROR_ON_PROCESS = 'Error on batch process'
+}

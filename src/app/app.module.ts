@@ -7,6 +7,7 @@ import {ComponentsModule} from './components/components.module';
 import {AccessLogService} from '../shared/services/access-log.service';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DragDropDirective} from '../shared/directives/drag-drop.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     AccessLogService
