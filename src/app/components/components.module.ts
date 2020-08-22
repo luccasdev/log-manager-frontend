@@ -10,6 +10,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {OwlDateTimeModule, OwlNativeDateTimeModule} from 'ng-pick-datetime';
 import {DragDropDirective} from '../../shared/directives/drag-drop.directive';
+import {AngularSvgIconModule} from 'angular-svg-icon';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {DragDropDirective} from '../../shared/directives/drag-drop.directive';
     ReactiveFormsModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
+    AngularSvgIconModule.forRoot()
   ]
 })
 export class ComponentsModule { }

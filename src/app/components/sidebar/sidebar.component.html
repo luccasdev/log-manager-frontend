@@ -3,7 +3,7 @@
     <img src="assets/svg/logmanager-logo.svg"/>
   </div>
   <div [routerLinkActive]="'active'" [routerLink]="menuItem.router" *ngFor="let menuItem of menuItems" class="sidebar-item">
-    <img [src]="menuItem.iconPath" class="sidebar-item-icon" alt="sidebar-item-icon"/>
+    <svg-icon [src]="menuItem.iconPath" class="sidebar-item-icon"></svg-icon>
     <label>{{menuItem.label}}</label>
   </div>
 </div>
