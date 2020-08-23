@@ -53,6 +53,7 @@
 <span>In the upload session, you can upload files with user logs and the backend will process in batch. <b>(Asynchronous upload)</b></span><br>
 <span>You can see the upload history with status.</span><br>
 <sub>Click on the image to expand</sub>
+
 ![LogManager - Upload](https://i.imgur.com/urQKETg.png)
 
 
